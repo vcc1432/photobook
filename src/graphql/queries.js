@@ -2,55 +2,32 @@
 // this is an auto generated file. This will be overwritten
 
 export const getAlbum = /* GraphQL */ `
-  query GetAlbum($id: ID!) {
-    getAlbum(id: $id) {
-      id
-      owner
-      ownerId
-      name
-      createdAt
-      updatedAt
-      photos {
-        items {
-          id
-          createdAt
-          updatedAt
-          album {
-            id
-            owner
-            ownerId
-            name
-            createdAt
-            updatedAt
-            photos {
-              nextToken
-            }
-          }
-          fullsize {
-            region
-            bucket
-            key
-          }
-          thumbnail {
-            region
-            bucket
-            key
-          }
-          contentType
-          gps {
-            latitude
-            longitude
-            altitude
-          }
-          height
-          width
-          size
-          owner
+query GetAlbum($id: ID!) {
+  getAlbum(id: $id) {
+    id
+    owner
+    ownerId
+    name
+    createdAt
+    photos {
+      items {
+        id
+        createdAt
+        thumbnail {
+          key
         }
-        nextToken
+        fullsize {
+          key
+        }
+        gps {
+          latitude
+          longitude
+        }
       }
+      nextToken
     }
   }
+}
 `;
 export const listAlbums = /* GraphQL */ `
   query ListAlbums(

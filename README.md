@@ -36,6 +36,7 @@ The page will reload if you make edits.<br />
 ## Future improvements, features and fixes
 
 - Building an error toast or modal to give the user feedback when a process errors out;
+- Custom styling;
 - Expand the app with other CRUD functionalities, like editing album names, deleting albums and photos, etc.
 - A nice major feature would be a sharing option to immediately share the image to social media;
 - A drag and drop area for file uploads;

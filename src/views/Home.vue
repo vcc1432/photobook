@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Login/>
+    <Login />
   </div>
 </template>
 
@@ -12,6 +12,6 @@ export default {
   name: 'Home',
   components: {
     Login,
-  }
-}
+  },
+};
 </script>

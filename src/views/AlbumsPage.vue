@@ -17,17 +17,7 @@
       <div
         v-for="(album, idx) in albums"
         :key="idx"
-        class="
-          transform 
-          transition 
-          duration-500 
-          cursor-pointer 
-          mt-4 ml-4 w-3/12 h-24 
-          shadow-xl 
-          flex 
-          items-center
-          justify-center
-          hover:scale-105"
+        class="transform transition duration-500 cursor-pointer mt-4 ml-4 w-3/12 h-24 shadow-xl flex items-center justify-center hover:scale-105"
         @click="openAlbumDetail(album)"
       >
         <div class="text-2xl">{{ album.name }}</div>

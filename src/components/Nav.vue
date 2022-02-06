@@ -3,9 +3,7 @@
     <ul class="flex justify-end">
       <template v-if="user">
         <li class="mr-6">
-          <div class="font-semibold text-black-500">
-            Welcome {{ user.username }}
-          </div>
+          <div class="font-semibold text-black-500">Welcome {{ user.username }}</div>
         </li>
         <li class="mr-6">
           <router-link to="/albums">
@@ -15,10 +13,7 @@
           </router-link>
         </li>
         <li class="mr-6">
-          <div
-            class="text-blue-500 hover:text-blue-800 cursor-pointer"
-            @click="logout"
-          >
+          <div class="text-blue-500 hover:text-blue-800 cursor-pointer" @click="logout">
             Logout
           </div>
         </li>
@@ -26,16 +21,12 @@
       <template v-else>
         <li class="mr-6">
           <router-link to="/">
-            <a class="text-blue-500 hover:text-blue-800 cursor-pointer"
-              >Login</a
-            >
+            <a class="text-blue-500 hover:text-blue-800 cursor-pointer">Login</a>
           </router-link>
         </li>
         <li class="mr-6">
           <router-link to="/signup">
-            <a class="text-blue-500 hover:text-blue-800 cursor-pointer"
-              >Sign Up</a
-            >
+            <a class="text-blue-500 hover:text-blue-800 cursor-pointer">Sign Up</a>
           </router-link>
         </li>
       </template>

@@ -17,4 +17,7 @@ applyPolyfills().then(() => {
 
 Amplify.configure(aws_exports);
 
-createApp(App).use(store).use(router).mount('#app');
+createApp(App)
+  .use(store)
+  .use(router)
+  .mount('#app');

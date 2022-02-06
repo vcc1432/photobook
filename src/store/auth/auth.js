@@ -1,4 +1,4 @@
-import { Auth } from "aws-amplify";
+import { Auth } from 'aws-amplify';
 
 export const auth = {
   namespaced: true,
@@ -8,24 +8,24 @@ export const auth = {
   mutations: {
     setUser(state, payload) {
       state.user = payload;
-    }
+    },
   },
   actions: {
     async logout({ commit }) {
-      commit("setUser", null);
+      commit('setUser', null);
       return await Auth.signOut();
     },
     async login({ commit }, { username, password }) {
       try {
         await Auth.signIn({
           username,
-          password
+          password,
         });
 
         const userInfo = await Auth.currentUserInfo();
-        commit("setUser", userInfo);
+        commit('setUser', userInfo);
 
-        return Promise.resolve("Success");
+        return Promise.resolve('Success');
       } catch (error) {
         console.log(error);
         return Promise.reject();
@@ -38,9 +38,7 @@ export const auth = {
       } catch (error) {
         console.log(error);
         return Promise.reject();
-        
       }
-      
     },
     async signUp(_, { username, password, email }) {
       try {
@@ -48,8 +46,8 @@ export const auth = {
           username,
           password,
           attributes: {
-            email
-          }
+            email,
+          },
         });
         return Promise.resolve();
       } catch (error) {
@@ -59,11 +57,10 @@ export const auth = {
     },
     async authAction({ commit }) {
       const userInfo = await Auth.currentUserInfo();
-      commit("setUser", userInfo);
-    }
-
+      commit('setUser', userInfo);
+    },
   },
   getters: {
-    user: (state) => state.user
-  }
+    user: (state) => state.user,
+  },
 };

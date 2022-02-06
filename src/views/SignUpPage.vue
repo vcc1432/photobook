@@ -1,12 +1,14 @@
 <template>
   <div>
-    <form 
-      v-if="!confirmPassword" 
+    <form
+      v-if="!confirmPassword"
       class="flex flex-col items-center"
       @submit.prevent="signUp"
     >
       <div class="flex flex-col user">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">User Name</label>
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="username"
+          >User Name</label
+        >
         <input
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           type="text"
@@ -15,7 +17,9 @@
         />
       </div>
       <div class="flex flex-col mt-2">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="password"
+          >Password</label
+        >
         <input
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           type="password"
@@ -24,7 +28,9 @@
         />
       </div>
       <div class="flex flex-col mt-2">
-        <label class="block text-gray-700 text-sm font-bold" for="email">Email</label>
+        <label class="block text-gray-700 text-sm font-bold" for="email"
+          >Email</label
+        >
         <input
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           type="email"
@@ -39,7 +45,9 @@
     <div v-if="confirmPassword" class="w-4/12 m-auto">
       <h3>Enter your code. Please check your email</h3>
       <div class="flex flex-col mt-2">
-        <label class="block text-gray-700 text-sm font-bold" for="password">Code</label>
+        <label class="block text-gray-700 text-sm font-bold" for="password"
+          >Code</label
+        >
         <input
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           type="text"
@@ -47,7 +55,7 @@
         />
         <button class="btn-blue" @click="confirmSignUp">Confirm Code</button>
       </div>
-    </div>  
+    </div>
   </div>
 </template>
 
@@ -69,7 +77,7 @@ export default {
       confirmSignUpVue: 'auth/confirmSignUp',
       loginVue: 'auth/login',
     }),
-    async signUp(){
+    async signUp() {
       if (!this.email || !this.password) {
         return;
       }
@@ -85,7 +93,7 @@ export default {
         this.error = error;
       }
     },
-    async confirmSignUp(){
+    async confirmSignUp() {
       if (!this.username || !this.code) {
         return;
       }
@@ -104,10 +112,7 @@ export default {
         console.log(error);
         this.error = error;
       }
-    }
+    },
   },
-}
+};
 </script>
-<style>
-  
-</style>

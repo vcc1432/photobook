@@ -1,3 +1,4 @@
+
 type Album @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   owner: ID!
@@ -27,6 +28,7 @@ type Photo
   height: Int
   width: Int
   size: Int
+  favorite: Boolean
 }
 
 type S3Object @aws_iam @aws_cognito_user_pools {

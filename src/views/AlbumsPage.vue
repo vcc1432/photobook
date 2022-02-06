@@ -17,18 +17,30 @@
       <div
         v-for="(album, idx) in albums"
         :key="idx"
-        class="cursor-pointer mt-4 ml-4 w-3/12 h-24 shadow-xl flex items-center justify-center"
+        class="
+          transform 
+          transition 
+          duration-500 
+          cursor-pointer 
+          mt-4 ml-4 w-3/12 h-24 
+          shadow-xl 
+          flex 
+          items-center
+          justify-center
+          hover:scale-105"
         @click="openAlbumDetail(album)"
       >
         <div class="text-2xl">{{ album.name }}</div>
       </div>
-    </div>  </div>
+    </div>
+  </div>
 </template>
+
 <script>
 import { mapGetters } from 'vuex';
 export default {
   async mounted() {
-    this.$store.dispatch('albumInfo/getAlbumsData')
+    this.$store.dispatch('albumInfo/getAlbumsData');
   },
   data: () => ({
     albumName: '',
@@ -40,7 +52,7 @@ export default {
     },
     async createAlbum() {
       this.error = '';
-      if(!this.albumName) {
+      if (!this.albumName) {
         this.error = 'Please enter an album name';
         return;
       }
@@ -50,16 +62,13 @@ export default {
         ownerId: this.user.id,
       };
       this.$store.dispatch('albumInfo/createAlbum', newAlbum);
-    }
+    },
   },
   computed: {
     ...mapGetters({
       user: 'auth/user',
-      albums: 'albumInfo/albums'
-    })
-  }
-}
+      albums: 'albumInfo/albums',
+    }),
+  },
+};
 </script>
-<style>
-  
-</style>

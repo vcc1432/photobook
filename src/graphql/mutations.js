@@ -48,6 +48,7 @@ export const createAlbum = /* GraphQL */ `
           height
           width
           size
+          favorite
           owner
         }
         nextToken
@@ -102,6 +103,7 @@ export const updateAlbum = /* GraphQL */ `
           height
           width
           size
+          favorite
           owner
         }
         nextToken
@@ -156,6 +158,7 @@ export const deleteAlbum = /* GraphQL */ `
           height
           width
           size
+          favorite
           owner
         }
         nextToken
@@ -211,6 +214,7 @@ export const createPhoto = /* GraphQL */ `
             height
             width
             size
+            favorite
             owner
           }
           nextToken
@@ -235,6 +239,7 @@ export const createPhoto = /* GraphQL */ `
       height
       width
       size
+      favorite
       owner
     }
   }
@@ -287,6 +292,7 @@ export const deletePhoto = /* GraphQL */ `
             height
             width
             size
+            favorite
             owner
           }
           nextToken
@@ -311,6 +317,7 @@ export const deletePhoto = /* GraphQL */ `
       height
       width
       size
+      favorite
       owner
     }
   }
@@ -363,6 +370,7 @@ export const updatePhoto = /* GraphQL */ `
             height
             width
             size
+            favorite
             owner
           }
           nextToken
@@ -387,6 +395,7 @@ export const updatePhoto = /* GraphQL */ `
       height
       width
       size
+      favorite
       owner
     }
   }

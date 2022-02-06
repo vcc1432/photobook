@@ -2,32 +2,56 @@
 // this is an auto generated file. This will be overwritten
 
 export const getAlbum = /* GraphQL */ `
-query GetAlbum($id: ID!) {
-  getAlbum(id: $id) {
-    id
-    owner
-    ownerId
-    name
-    createdAt
-    photos {
-      items {
-        id
-        createdAt
-        thumbnail {
-          key
+  query GetAlbum($id: ID!) {
+    getAlbum(id: $id) {
+      id
+      owner
+      ownerId
+      name
+      createdAt
+      updatedAt
+      photos {
+        items {
+          id
+          createdAt
+          updatedAt
+          album {
+            id
+            owner
+            ownerId
+            name
+            createdAt
+            updatedAt
+            photos {
+              nextToken
+            }
+          }
+          fullsize {
+            region
+            bucket
+            key
+          }
+          thumbnail {
+            region
+            bucket
+            key
+          }
+          contentType
+          gps {
+            latitude
+            longitude
+            altitude
+          }
+          height
+          width
+          size
+          favorite
+          owner
         }
-        fullsize {
-          key
-        }
-        gps {
-          latitude
-          longitude
-        }
+        nextToken
       }
-      nextToken
     }
   }
-}
 `;
 export const listAlbums = /* GraphQL */ `
   query ListAlbums(
@@ -75,6 +99,7 @@ export const listAlbums = /* GraphQL */ `
             height
             width
             size
+            favorite
             owner
           }
           nextToken
@@ -129,6 +154,7 @@ export const getPhoto = /* GraphQL */ `
             height
             width
             size
+            favorite
             owner
           }
           nextToken
@@ -153,6 +179,7 @@ export const getPhoto = /* GraphQL */ `
       height
       width
       size
+      favorite
       owner
     }
   }
@@ -184,6 +211,7 @@ export const listPhotos = /* GraphQL */ `
               height
               width
               size
+              favorite
               owner
             }
             nextToken
@@ -208,6 +236,7 @@ export const listPhotos = /* GraphQL */ `
         height
         width
         size
+        favorite
         owner
       }
       nextToken
